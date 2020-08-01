@@ -1,0 +1,161 @@
+ <html>
+ <head>
+	<title>Student Registration Form</title>
+	
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+
+	<body>
+	<div class="loginbox">
+  <form action="studentenglish.php" name="Englishform" method="POST">
+ 
+
+	<table cellpadding="10" width="50%" height="50%"  align="center"
+	cellspacing="10">
+	
+		<tr>
+			<td colspan=2>
+			<center><font size=10><b>Student Registration Form</b></font></center>
+			<br>
+			<center><font size=6><b>FOR English Medium </b></font></center>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>Medium</td>
+			<td><font size=4><b>ENGLISH</b></font></td>
+		</tr>
+		
+		<tr>
+		 <td>Standard</td>
+			
+				<td><select name ="std" required>
+				<option value=-1> Select</option>
+				<option value=1> 1st</option>
+				<option value=2> 2nd</option>
+				<option value=3> 3rd</option>
+				<option value=4> 4th</option>
+				<option value=5> 5th</option>
+				<option value=6> 6th</option>
+				<option value=7> 7th</option>
+				<option value=8> 8th</option>
+				<option value=9> 9th</option>
+				<option value=10> 10th</option>
+				</select>
+			</td>
+		</tr>
+
+		<tr>
+			<td>Full Name</td>
+			<td><input type="text" name="studentname"  size="50" placeholder="Enter Full Name" required></td>
+		</tr>
+
+		<tr>
+			<td><font size ="3">Father Name</font></td>
+			<td><input type="text" name="fathername" id="fathername" size="50" placeholder="Enter Father Name" required></td>
+		</tr>
+		
+		<tr>	
+			<td>DOB</td>
+			<td><input type="date" name="dob" id="dob" size="50" required></td>
+		</tr>
+		
+		<tr>
+			<td>Gender</td>
+			<td>
+				<input type="radio" name="gender" value="Male" size="10" required>Male
+				<input type="radio" name="gender" value="Female" size="10" required>Female
+			</td>
+		</tr>
+	
+		<tr>
+			<td>Present Address</td>
+			<td><input type="text" name="paddress" id="paddress" size="50" placeholder="Enter Full address" required></td>
+		</tr>
+	
+		<tr>
+			<td> <input type="button" size="10" value="Copy As Permanent Address" onclick="myFunction()"></button>
+
+		<script>
+			function myFunction() {
+			document.getElementById("personaladdress").value = document.getElementById("paddress").value;
+		}
+</script>
+		</tr>
+		<tr>
+			<td>Permanent Address</td>
+			<td><input type="text" name="personaladdress"id="personaladdress" size="50" placeholder="Enter Permanent Address">
+			</td>
+		</tr>
+
+
+		
+		<tr>
+			<td>PinCode</td>
+			<td><input type="text" name="pincode" id="pincode" size="10" maxlength="6" placeholder="Enter Pincode" required></td>
+		</tr>
+		<tr>
+			<td>Email</td>
+			<td><input type="email" name="emailid" id="emailid" size="50" placeholder="Enter Email-ID" ></td>
+		</tr>
+
+		
+
+		<tr>
+			<td>MobileNo</td>
+			<td><input type="text" name="mobileno" id="mobileno" size="10" maxlength="10" placeholder="Enter Mobile Number" required></td>
+			
+		</tr>
+		<tr>
+			<td>
+				<input type="reset">
+			</td>
+			<td colspan="2">
+				<input type="submit" value="Submit Form" onclick="validateForm()">
+			</td>
+			
+			<td colspan="3">
+				<input type="submit" value="Back To HOME" onclick="homepage()">
+				
+			</td>
+			
+		</tr>
+		
+	</table>
+	
+</form>
+
+<script>
+        function homepage() {
+        window.location.href = "index.html"  }
+    
+
+function validateForm() {
+  var x = document.forms["Englishform"]["studentname"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+  var x = document.forms["Englishform"]["fathername"].value;
+  if (x == "") {
+    alert("Father Name must be filled out");
+    return false;
+  }
+  
+  var x = document.forms["Englishform"]["mobileno"].value;
+  if (x.length!=10 && isNaN(x)) {
+    alert("Check your mobile number");
+    return false;
+  }
+  
+  var x = document.forms["Englishform"]["pincode"].value;
+  if (x.length!=6&& isNaN(x)) {
+    alert("Check your pincode");
+    return false;
+  }
+}
+</script>
+</header>
+</body>
+</head>
+</html>
